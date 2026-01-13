@@ -82,7 +82,7 @@ Why terraform-aws-modules?
 │   │   │   ├── 📄 main.tf      # Modules  
 │   │   │   └── 📄 terraform.tfvars      # Assign the Variables  
 │   │   ├── 📂 prod  
-│   │   │   ├── 📄 main.tf      # Modules 
+│   │   │   ├── 📄 main.tf      # Modules  
 │   │   │   └── 📄 terraform.tfvars      # Assign the Variables  
 
 </details>
