@@ -70,26 +70,26 @@ Why terraform-aws-modules?
 <details>
 <summary><strong>3d-production-pipeline/</strong></summary>
 
-├── README.md — Master documentation  
-├── terraform/ — Infrastructure (AWS)  
-│   ├── backend.tf — Remote state (S3)  
-│   ├── providers.tf — Provider configuration  
-│   ├── versions.tf — Provider versions  
+├── README.md                   — Master documentation  
+├── terraform/                  — Infrastructure (AWS)  
+│   ├── backend.tf              — Remote state (S3)  
+│   ├── providers.tf            — Provider configuration  
+│   ├── versions.tf             — Provider versions  
 │   ├── envs/  
 │   │   ├── dev/  
-│   │   └── main.tf — Modules  
+│   │   └── main.tf             — Modules  
 │   ├── prod/  
-│   │   └── main.tf — Modules  
-├── services/ — Application logic Microservices  
+│   │   └── main.tf             — Modules  
+├── services/                   — Application logic Microservices  
 │   ├── shazam-api/ → app.py  
 │   ├── zip-validator/ → app.py  
 │   ├── unzip-service/ → app.py  
 │   ├── qa-service/ → app.py  
 │   ├── render-360/ → app.py  
 │   ├── search-bot/ → app.py  
-├── k8s/ — Kubernetes deployment  
+├── k8s/                        — Kubernetes deployment  
 │   └── shazam-api.yaml  
-├── ci-cd/ — Automation CI/CD pipelines  
+├── ci-cd/                      — Automation CI/CD pipelines  
 │   └── Jenkinsfile  
 
 </details>
