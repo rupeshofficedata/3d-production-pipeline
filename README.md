@@ -63,8 +63,6 @@ Why terraform-aws-modules?
 - Fewer mistakes
 - Less maintenance
 
-
-## Repository Structure
 ## Repository Structure
 
 <details>
@@ -78,11 +76,14 @@ Why terraform-aws-modules?
 │   ├── 📄 backend.tf           # Remote state (S3)  
 │   ├── 📄 providers.tf         # Provider configuration  
 │   ├── 📄 versions.tf          # Provider versions  
+│   ├── 📄 variables.tf         # Derclare the Variable (required) 
 │   ├── 📂 envs  
 │   │   ├── 📂 dev  
-│   │   │   └── 📄 main.tf      # Modules  
+│   │   │   ├── 📄 main.tf      # Modules  
+│   │   │   └── 📄 terraform.tfvars      # Assign the Variables
 │   │   ├── 📂 prod  
-│   │   │   └── 📄 main.tf      # Modules  
+│   │   │   ├── 📄 main.tf      # Modules 
+│   │   │   └── 📄 terraform.tfvars      # Assign the Variables 
 
 </details>
 
