@@ -65,32 +65,52 @@ Why terraform-aws-modules?
 
 
 ## Repository Structure
-
+## Repository Structure
 
 <details>
-<summary><strong>3d-production-pipeline/</strong></summary>
+<summary>📂 3d-production-pipeline</summary>
 
-├── README.md                   — Master documentation  
-├── terraform/                  — Infrastructure (AWS)  
-│   ├── backend.tf              — Remote state (S3)  
-│   ├── providers.tf            — Provider configuration  
-│   ├── versions.tf             — Provider versions  
-│   ├── envs/  
-│   │   ├── dev/  
-│   │   └── main.tf             — Modules  
-│   ├── prod/  
-│   │   └── main.tf             — Modules  
-├── services/                   — Application logic Microservices  
-│   ├── shazam-api/ → app.py  
-│   ├── zip-validator/ → app.py  
-│   ├── unzip-service/ → app.py  
-│   ├── qa-service/ → app.py  
-│   ├── render-360/ → app.py  
-│   ├── search-bot/ → app.py  
-├── k8s/                        — Kubernetes deployment  
-│   └── shazam-api.yaml  
-├── ci-cd/                      — Automation CI/CD pipelines  
-│   └── Jenkinsfile  
+├── 📄 README.md                # Master documentation  
+
+<details>
+<summary>📂 terraform — Infrastructure (AWS)</summary>
+
+│   ├── 📄 backend.tf           # Remote state (S3)  
+│   ├── 📄 providers.tf         # Provider configuration  
+│   ├── 📄 versions.tf          # Provider versions  
+│   ├── 📂 envs  
+│   │   ├── 📂 dev  
+│   │   │   └── 📄 main.tf      # Modules  
+│   │   ├── 📂 prod  
+│   │   │   └── 📄 main.tf      # Modules  
+
+</details>
+
+<details>
+<summary>📂 services — Application logic Microservices</summary>
+
+│   ├── 📂 shazam-api → 📄 app.py  
+│   ├── 📂 zip-validator → 📄 app.py  
+│   ├── 📂 unzip-service → 📄 app.py  
+│   ├── 📂 qa-service → 📄 app.py  
+│   ├── 📂 render-360 → 📄 app.py  
+│   ├── 📂 search-bot → 📄 app.py  
+
+</details>
+
+<details>
+<summary>📂 k8s — Kubernetes deployment</summary>
+
+│   └── 📄 shazam-api.yaml  
+
+</details>
+
+<details>
+<summary>📂 ci-cd — Automation CI/CD pipelines</summary>
+
+│   └── 📄 Jenkinsfile  
+
+</details>
 
 </details>
 
