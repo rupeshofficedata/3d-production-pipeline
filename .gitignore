@@ -1,0 +1,89 @@
+############################################
+# Terraform
+############################################
+
+# Terraform working directory
+.terraform/
+
+# Terraform state files (local fallback)
+*.tfstate
+*.tfstate.*
+
+# Terraform crash logs
+crash.log
+
+# Terraform lock file (can be committed if desired, but ignored for learning)
+.terraform.lock.hcl
+
+
+############################################
+# Python
+############################################
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.env/
+
+
+############################################
+# Docker
+############################################
+
+# Docker temporary files
+*.log
+
+
+############################################
+# Kubernetes
+############################################
+
+# Local kubeconfig backups
+kubeconfig*
+*.kubeconfig
+
+
+############################################
+# OS / Editor
+############################################
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# IntelliJ / PyCharm
+.idea/
+
+
+############################################
+# Application Artifacts
+############################################
+
+# Uploaded ZIP files
+*.zip
+
+# Rendered images / outputs
+renders/
+output/
+
+
+############################################
+# Security / Secrets
+############################################
+
+# Environment variable files
+.env.local
+.env.prod
+
+# Credentials
+*.pem
+*.key
+*.crt
