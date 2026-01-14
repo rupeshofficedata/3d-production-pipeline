@@ -73,6 +73,41 @@ It must be enabled:
 This is an S3 rule, not Terraform.
 
 ## 6️⃣ CORRECT WAY TO CREATE THE BACKEND BUCKET (STEP-BY-STEP)
+Step 0 _ Create IAM Role with policy attached.
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "BucketManagement",
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateBucket",
+        "s3:PutBucketObjectLockConfiguration",
+        "s3:GetBucketObjectLockConfiguration",
+        "s3:PutBucketPolicy",
+        "s3:GetBucketPolicy",
+        "s3:PutBucketTagging",
+        "s3:GetBucketTagging"
+      ],
+      "Resource": "arn:aws:s3:::shazam-terraform-state"
+    },
+    {
+      "Sid": "ObjectManagement",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:DeleteObject",
+        "s3:ListBucket",
+        "s3:GetObjectVersion",
+        "s3:DeleteObjectVersion"
+      ],
+      "Resource": "arn:aws:s3:::shazam-terraform-state/*"
+    }
+  ]
+}
+```
 Step 1 — Create S3 bucket WITH Object Lock
 
     ```bash
