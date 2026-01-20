@@ -2,8 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: shazam-api
+  namespace: shazam
 spec:
-  replicas: 2   # High availability
+  replicas: 2
   selector:
     matchLabels:
       app: shazam-api
@@ -12,8 +13,9 @@ spec:
       labels:
         app: shazam-api
     spec:
+      serviceAccountName: shazam-api
       containers:
       - name: shazam-api
-        image: shazam/api:latest
+        image: <dockerhub>/shazam-api:latest
         ports:
         - containerPort: 5000

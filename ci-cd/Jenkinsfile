@@ -1,16 +1,19 @@
 pipeline {
   agent any
-
   stages {
-    stage("Build") {
+    stage('Build') {
       steps {
-        sh "docker build -t shazam-api services/shazam-api"
+        sh 'docker build -t shazam-api services/shazam-api'
       }
     }
-
-    stage("Deploy") {
+    stage('Push') {
       steps {
-        sh "kubectl apply -f k8s/"
+        sh 'docker push <dockerhub>/shazam-api'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        sh 'kubectl apply -f k8s/'
       }
     }
   }

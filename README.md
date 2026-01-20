@@ -141,6 +141,29 @@ terraform validate
 terraform plan
 terraform apply
 ```
+
+## 3. Build & Push Docker images
+
+```bash
+docker build -t shazam-api services/shazam-api
+docker tag shazam-api <dockerhub>/shazam-api:latest
+docker push <dockerhub>/shazam-api:latest
+```
+## 4. AWS LOAD BALANCER CONTROLLER
+Why
+
+Kubernetes Ingress does not create ALBs by itself
+
+AWS controller does this automatically
+
+Install (Helm)
+```bash
+helm repo add eks https://aws.github.io/eks-charts
+helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
+  --namespace kube-system \
+  --set clusterName=shazam-eks
+```
+
 ## 3. Connect to Kubernetes
 
 ```bash
@@ -152,7 +175,13 @@ kubectl get nodes
 ```bash
 kubectl apply -f k8s/
 ```
-## Observability
+## Observability/MONITORING
+```bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm install prometheus prometheus-community/prometheus
+helm repo add grafana https://grafana.github.io/helm-charts
+helm install grafana grafana/grafana
+```
 Dashboards:
     Artist productivity
     QA rejection rate
@@ -164,4 +193,6 @@ Dashboards:
 Alerts:
     QA backlog SLA breach
     Render failures
-    ZIP validation spikes
+    ZIP validation spikes.
+
+## CI/CD (JENKINS + GITHUB ACTIONS)
